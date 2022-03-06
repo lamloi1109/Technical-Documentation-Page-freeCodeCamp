@@ -1,74 +1,154 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    overflow-x: hidden;
+body {
+  font-family: "Lato", sans-serif;
+  background-color: white;
+  overflow-x: hidden;
 }
 
-.page{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: auto 4fr ;
-    grid-template-rows: 1fr;
-    position: relative;
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 4fr;
+  grid-template-rows: 1fr;
+  position: relative;
 }
-.page #navbar{
-    grid-column: 1/2;
-    display: grid;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    border-right: 3px solid #99A2A2;
+.page #navbar {
+  grid-column: 1/2;
+  /* display: grid; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-right: 3px solid #99a2a2;
+  background-color: white;
+}
+.page #navbar #header {
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  margin: 10px;
+}
+.page #navbar #header h1 {
+  font-size: 1.75em;
+  font-weight: 500;
+}
+.navbar-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.scroll-bar {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    height: 88%;
+    overflow-x: hidden;
+  }
+.navbar-item:nth-child(1) {
+  border-top: 1px solid black;
+}
+.navbar-item:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+.navbar-item .nav-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding: 10px;
+  margin-left: 20px;
+  color: #4d4e53;
+  font-size: 18px;
+}
+.page #main-doc {
+  left: 310px;
+  position: absolute;
+  grid-column: 2/3;
+  background-color: white;
+  color: black;
+}
+.page #main-doc header {
+  margin: 30px;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: left;
+  font-size: 28.8px;
+}
+.page #main-doc p,
+li {
+  margin: 20px 30px 15px 40px;
+  color: #4d4e53;
+  font-size: medium;
+  line-height: 1.6em;
+}
+.page #main-doc ul {
+  margin: 20px 30px 15px 100px;
+}
+.page #main-doc ul li {
+  margin: 20px 40px 0px 0px;
+  color: #4d4e53;
+}
+code {
+  margin: 20px 30px 15px 40px;
+  display: block;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 815px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    position: unset;
+    /* align-items: center; */
+  }
+  .page #navbar {
+    position: unset ;
+    border: none;
     background-color: white;
-}
-.page #navbar #header{
+    max-height: 370px;
+    display: grid;
+    grid-template-columns: auto 2fr auto;
+    grid-template-rows: auto 1fr;
+    grid-gap: 0px 20px;
+    border-bottom: 2px solid  black;
+  }
+  .page #navbar #header {
+    grid-column: 2/3;
+    grid-row: 1/2;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.page #navbar #header h1{
+  }
+  .page #navbar #header h1 {
     font-size: 1.75em;
     font-weight: 500;
-}
-.navbar-item{
+  }
+  .navbar-item {
     width: 100%;
     display: flex;
     align-items: center;
-}
-.scroll-bar{
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    height: 550px;
-}
-.navbar-item:nth-child(1){
-    border-top: 1px solid black;
-}
-.navbar-item:not(:last-child){
-    border-bottom: 1px solid black ;
-}
-.navbar-item .nav-link{
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    padding: 10px;
-    margin-left: 20px;
-    color: #4D4E53;
-    font-size: 18px;
-}
-.page #main-doc{
+    }
+  .scroll-bar {
     grid-column: 2/3;
-    background-color: rgb(151, 95, 95);
+    grid-row: 2/3;
+    border: 2px solid black;
+    overflow-y: auto;
+    height: auto;
+    overflow-x: hidden;
+    z-index: 1;
+
 }
-/* .container{
-    max-width: 1200px;
-    height: 100%;
-    margin: 40px;
-    background-color: blue;
-} */
+  .page #main-doc {
+    position: unset;
+    background-color: white;
+    color: black;
+  }
+}
